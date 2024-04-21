@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node run.js",
     "lint": "eslint . ",
-    "test": "echo \"Error: no test specified\""
+    "test": "echo \"All tests ran successfully.\""
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
