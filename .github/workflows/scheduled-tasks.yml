@@ -1,0 +1,17 @@
+name: Scheduled Tasks
+on:
+  schedule:
+    - cron: "35 * * * *"
+    # run every 1 minute for testing
+
+jobs:
+  scheduled-task:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run scheduled task
+        run: echo "Running scheduled task"
+      - name: Giving permissions to execute the script
+        run: chmod +x ./i211102_Schedule.sh
+      - name: Running the script
+        run: ./i211102_Schedule.sh
