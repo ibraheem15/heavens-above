@@ -1,0 +1,31 @@
+name: Build and Deploy Documentation
+
+on:
+  push:
+    branches:
+      - main  # replace with your default branch name
+    paths: 
+        - 'docs/**'  # replace with the path to your documentation files
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.7
+
+    - name: Install dependencies
+      run: |
+        gem install bundler
+        bundle install --jobs 4 --retry 3
+
+    - name: Build and deploy to GitHub Pages
+      uses: helaili/jekyll-action@2.0.1
+      env:
+        JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
