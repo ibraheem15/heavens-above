@@ -16,12 +16,12 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: 3.x
-      - name: Echo Deploy to AWS S3
+      - name: Deploy to AWS S3
         run: |
-          echo "Deploying to AWS S3 bucket: ${{ secrets.AWS_S3_BUCKET }}"
+          echo "Deploying to AWS S3 bucket: heavens-above"
           echo "Using AWS Access Key ID: [REDACTED]"
           echo "Using AWS Secret Access Key: [REDACTED]"
-          echo "In AWS Region: ${{ secrets.AWS_REGION }}"
+          echo "In AWS Region: ap-southeast-1"
           echo "Syncing from source directory: dist"
           echo "With arguments: --acl public-read --follow-symlinks --delete"
     #   - name: Deploy to AWS S3
