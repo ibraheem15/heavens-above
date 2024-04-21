@@ -1,8 +1,8 @@
 name: Scheduled Tasks
 on:
   schedule:
-    # run every 1 minute for testing
     - cron: "*/1 * * * *"
+    # run every 1 minute for testing
 
 jobs:
   scheduled-task:
