@@ -14,7 +14,7 @@ A brief description of your project and what it does.
 
 ### Prerequisites
 
-- List any prerequisites or dependencies required to use your project.
+- List any prerequisites or dependencies required to use your project
 
 ### Installation
 
