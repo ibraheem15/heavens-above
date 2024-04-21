@@ -10,6 +10,5 @@ updates:
     # Create pull requests with dependency changes
     open-pull-requests-limit: 10
     # Adhere to versioning policies and include proper review mechanisms
-    version: "2.0.0"
     reviewers:
-      - username: "ibraheem15"
+      - "ibraheem15"
