@@ -8,7 +8,7 @@ A brief description of your project and what it does.
 
 ## Features
 
-- List the key features of your project that are enabled by GitHub Actions.
+- List the key features of your project that are enabled by GitHub Actions
 
 ## Getting Started
 
