@@ -1,8 +1,11 @@
 name: Generate Release Notes
 
 on:
-  release:
-    types: [published]
+#   release:
+#     types: [published]
+    push: #! For testing purposes
+        branches:
+        - main
 
 jobs:
   release_notes:
