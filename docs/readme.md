@@ -18,7 +18,7 @@ A brief description of your project and what it does.
 
 ### Installation
 
-- Provide step-by-step instructions on how to install and configure your project.
+- Provide step-by-step instructions on how to install and configure your project
 
 ## Usage
 
