@@ -1,0 +1,34 @@
+name: Generate Release Notes
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  release_notes:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Install GitHub CLI
+        run: |
+          sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+          sudo apt-add-repository https://cli.github.com/packages
+          sudo apt update
+          sudo apt install gh
+
+      - name: Generate release notes
+        run: |
+          PREVIOUS_TAG=$(git describe --tags --abbrev=0 HEAD^)
+          RELEASE_NOTES=$(git log --format=%B $PREVIOUS_TAG..HEAD)
+          echo "RELEASE_NOTES=$RELEASE_NOTES" >> $GITHUB_ENV
+
+      - name: Update release
+        run: |
+          gh release edit ${{ github.event.release.tag_name }} -n "${{ env.RELEASE_NOTES }}"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
