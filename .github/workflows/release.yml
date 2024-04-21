@@ -35,7 +35,7 @@ jobs:
         run: |
           RELEASE_NOTES="${RELEASE_NOTES//;/\\n}"
           gh release create ${{ github.event.release.tag_name }} \
-            --title ${{ github.event.release.name }} \
+            --title "${{ github.event.release.name }}" \
             --notes "$RELEASE_NOTES" \
             --prerelease
         env:
