@@ -6,7 +6,7 @@
   "main": "run.js",
   "scripts": {
     "start": "node run.js",
-    "lint": "eslint --ignore-path .gitignore .",
+    "lint": "eslint . ",
     "test": "echo \"Error: no test specified\""
   },
   "dependencies": {
