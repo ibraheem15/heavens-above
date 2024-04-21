@@ -7,7 +7,8 @@
   "scripts": {
     "start": "node run.js",
     "lint": "eslint . ",
-    "test": "echo \"All tests ran successfully.\""
+    "test": "echo \"All tests ran successfully.\"",
+    "build": "babel src --out-dir dist"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
@@ -31,6 +32,8 @@
     "node": ">=12.10.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.24.1",
+    "@babel/core": "^7.24.4",
     "babel-eslint": "^10.1.0",
     "eslint": "^9.1.0",
     "eslint-config-strongloop": "^2.1.0"
