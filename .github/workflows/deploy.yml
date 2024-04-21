@@ -24,3 +24,4 @@ jobs:
           publish_branch: gh-pages
           cname: heavens-above.com
           user_name: "Heavens Above"
+          user_email: "name@gmail.com"
