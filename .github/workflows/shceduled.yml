@@ -1,0 +1,12 @@
+name: Scheduled Tasks
+on:
+  schedule:
+    # run every 1 minute for testing
+    - cron: "*/1 * * * *"
+
+jobs:
+  scheduled-task:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: ./i211102.sh
