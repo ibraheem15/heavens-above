@@ -30,6 +30,10 @@ jobs:
           RELEASE_NOTES=$(git log --format=%B $PREVIOUS_TAG..HEAD | tr '\n' ';')
           echo "RELEASE_NOTES=$RELEASE_NOTES" >> $GITHUB_ENV
       
+      - name: Print tag_name
+        run: |
+          echo "tag_name: ${{ github.event.release.tag_name }}"
+      
       - name: Update release
         run: |
           RELEASE_NOTES="${RELEASE_NOTES//;/\\n}"
