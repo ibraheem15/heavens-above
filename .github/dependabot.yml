@@ -9,10 +9,7 @@ updates:
       interval: "daily"
     # Create pull requests with dependency changes
     open-pull-requests-limit: 10
-    # Run tests to verify compatibility
-    automerged: true
     # Adhere to versioning policies and include proper review mechanisms
     version: "2.0.0"
     reviewers:
-      - username: "reviewer1"
-      - username: "reviewer2"
+      - username: "ibraheem15"
