@@ -1,0 +1,23 @@
+name: Code Review
+on:
+#   pull_request:
+#     branches: [main]
+    push: # for testing
+        branches: [main]
+
+jobs:
+  code-review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 20
+      - run: npm i --force
+      - run: npm run lint
+      - name: CodeQL Analysis
+        uses: github/codeql-action/init@v1
+        with:
+          languages: javascript
+      - name: CodeQL Autobuild
+        uses: github/codeql-action/autobuild@v1
